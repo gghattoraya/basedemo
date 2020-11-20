@@ -9,8 +9,8 @@ pipeline {
     stages {
         stage('ImageBuild') {
             steps {
-                sh 'node --version'
-                sh 'svn --version'
+                sh 'cd'
+                git branch: 'main', credentialsId: 'github-jenkins-ssh-ecdsa512', url: 'git@github.com:gghattoraya/basedemo.git'
                 echo 'Building base image..'
             }
         }
